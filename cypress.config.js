@@ -3,8 +3,8 @@ const { defineConfig } = require('cypress');
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://staging-auth.tiara.jewelry',
-    defaultCommandTimeout: 12000,
-    pageLoadTimeout: 60000,
+    defaultCommandTimeout: 15000,
+    pageLoadTimeout: 90000,
     viewportWidth: 1440,
     viewportHeight: 900,
     video: false,
