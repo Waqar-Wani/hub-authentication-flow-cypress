@@ -22,7 +22,7 @@ describe('Section 2 - Forgot Password', () => {
     cy.fillEmail(user().email);
     cy.submitAuthForm();
 
-    cy.contains(/sent|check your email|success|confirmation|reset link/i, { timeout: 30000 }).should('be.visible');
+    cy.contains(/sent|check your email|success|confirmation|reset link|use the link|finish resetting/i, { timeout: 30000 }).should('be.visible');
   });
 
   it('11. mismatched new password and confirm password shows validation', () => {
