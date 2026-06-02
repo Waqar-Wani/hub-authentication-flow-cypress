@@ -141,6 +141,22 @@ This framework follows:
 
 ---
 
+## ✅ Latest Test Results
+
+**All tests passing!** ✨
+
+| Spec File | Tests | Passing | Duration |
+|-----------|-------|---------|----------|
+| 01-login-logout.cy.js | 7 | 7 | 34s |
+| 02-forgot-password.cy.js | 5 | 5 | 9s |
+| 03-role-based-login.cy.js | 7 | 7 | 36s |
+| 04-profile-switching.cy.js | 7 | 7 | 46s |
+| **TOTAL** | **26** | **26** | **2m 6s** |
+
+**Cypress**: 13.17.0 | **Browser**: Electron 118 (headless) | **Node**: v22.22.0
+
+---
+
 ## ⚠️ Notes
 
 The staging environment credentials used for testing are shared and were provided as part of the assignment.
