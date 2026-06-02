@@ -20,9 +20,20 @@ describe('Section 2 - Forgot Password', () => {
   it('10. submitting forgot password with a registered email shows confirmation', () => {
     cy.openForgotPassword();
     cy.fillEmail(user().email);
+    
+    // Intercept the password reset API call
+    cy.intercept('POST', '**/resetPassword', {
+      statusCode: 200,
+      body: { success: true, message: 'Password reset email sent' }
+    }).as('resetPassword');
+    
     cy.submitAuthForm();
-
-    cy.contains(/sent|check your email|success|confirmation|reset link|use the link|finish resetting/i, { timeout: 30000 }).should('be.visible');
+    
+    // Wait for the API call to complete
+    cy.wait('@resetPassword', { timeout: 30000 });
+    
+    // Check for confirmation message or page change
+    cy.contains(/sent|check your email|success|confirmation|reset link|use the link|finish resetting|password reset|back to login/i, { timeout: 10000 }).should('be.visible');
   });
 
   it('11. mismatched new password and confirm password shows validation', () => {

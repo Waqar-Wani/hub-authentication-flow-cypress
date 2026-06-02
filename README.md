@@ -182,9 +182,6 @@ No user data, passwords, or application configuration were modified during test 
 
 QA Automation Engineer
 
-- GitHub: https://github.com/Waqar-Wani
-- LinkedIn: *(Add your LinkedIn profile here)*
-
 ---
 
 ⭐ If you found this project useful, feel free to star the repository.
