@@ -1,0 +1,419 @@
+{
+  "startedTestsAt": "2026-06-03T05:55:38.883Z",
+  "endedTestsAt": "2026-06-03T05:57:24.953Z",
+  "browserName": "electron",
+  "browserVersion": "118.0.5993.159",
+  "osName": "darwin",
+  "osVersion": "25.3.0",
+  "cypressVersion": "13.17.0",
+  "totalDuration": 102936,
+  "totalTests": 26,
+  "totalPassed": 26,
+  "totalFailed": 0,
+  "totalPending": 0,
+  "totalSkipped": 0,
+  "runs": [
+    {
+      "spec": "cypress/e2e/01-login-logout.cy.js",
+      "stats": {
+        "duration": 28001,
+        "endedAt": "2026-06-03T05:56:06.884Z",
+        "failures": 0,
+        "passes": 7,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-06-03T05:55:38.883Z",
+        "suites": 1,
+        "tests": 7
+      },
+      "tests": [
+        {
+          "title": [
+            "Section 1 - Login & Logout",
+            "1. successful login with valid credentials redirects to the Hub dashboard"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 1 - Login & Logout",
+            "2. login with wrong password shows an error and stays on login page"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 1 - Login & Logout",
+            "3. login with invalid email format shows email validation"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 1 - Login & Logout",
+            "4. submitting the empty login form shows required field errors"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 1 - Login & Logout",
+            "5. user logs out and is redirected back to login page"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 1 - Login & Logout",
+            "6. accessing Hub directly after logout redirects to login page"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 1 - Login & Logout",
+            "7. refreshing while logged in keeps the dashboard visible"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        }
+      ]
+    },
+    {
+      "spec": "cypress/e2e/02-forgot-password.cy.js",
+      "stats": {
+        "duration": 4903,
+        "endedAt": "2026-06-03T05:56:12.971Z",
+        "failures": 0,
+        "passes": 5,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-06-03T05:56:08.068Z",
+        "suites": 1,
+        "tests": 5
+      },
+      "tests": [
+        {
+          "title": [
+            "Section 2 - Forgot Password",
+            "8. clicking Forgot password opens the forgot password form"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 2 - Forgot Password",
+            "9. submitting forgot password with empty email shows validation"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 2 - Forgot Password",
+            "10. submitting forgot password with a registered email shows confirmation"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 2 - Forgot Password",
+            "11. mismatched new password and confirm password shows validation"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 2 - Forgot Password",
+            "12. weak or too-short new password shows validation"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        }
+      ]
+    },
+    {
+      "spec": "cypress/e2e/03-role-based-login.cy.js",
+      "stats": {
+        "duration": 30381,
+        "endedAt": "2026-06-03T05:56:44.346Z",
+        "failures": 0,
+        "passes": 7,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-06-03T05:56:13.965Z",
+        "suites": 1,
+        "tests": 7
+      },
+      "tests": [
+        {
+          "title": [
+            "Section 3 - Role-Based Login",
+            "13. Admin dashboard loads with Admin-specific widgets visible"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 3 - Role-Based Login",
+            "14. Owner dashboard loads and differs from Admin"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 3 - Role-Based Login",
+            "15. Store Manager dashboard loads correctly"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 3 - Role-Based Login",
+            "16. Admin sees User Management in navigation"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 3 - Role-Based Login",
+            "17. Owner does not see User Management in navigation"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 3 - Role-Based Login",
+            "18. Store Manager cannot access a restricted URL directly"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 3 - Role-Based Login",
+            "19. logging out as one role then logging in as another shows the correct dashboard each time"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        }
+      ]
+    },
+    {
+      "spec": "cypress/e2e/04-profile-switching.cy.js",
+      "stats": {
+        "duration": 39651,
+        "endedAt": "2026-06-03T05:57:24.953Z",
+        "failures": 0,
+        "passes": 7,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-06-03T05:56:45.302Z",
+        "suites": 1,
+        "tests": 7
+      },
+      "tests": [
+        {
+          "title": [
+            "Section 4 - Profile Switching",
+            "20. profile switcher is visible after login"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 4 - Profile Switching",
+            "21. current profile name QA is displayed after login"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 4 - Profile Switching",
+            "22. switches from QA to QA2 and reloads with QA2 selected"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 4 - Profile Switching",
+            "23. profile name updates from QA to QA2 after switching"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 4 - Profile Switching",
+            "24. dashboard content changes after profile switch"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 4 - Profile Switching",
+            "25. switches back from QA2 to QA and restores QA dashboard data"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        },
+        {
+          "title": [
+            "Section 4 - Profile Switching",
+            "26. refreshing after profile switch keeps QA2 active"
+          ],
+          "state": "passed",
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null
+        }
+      ]
+    }
+  ]
+}

@@ -16,6 +16,27 @@ const submitSelector = [
   'input[type="submit"]'
 ].join(',');
 
+const MAX_SIGNIN_ATTEMPTS = 4;
+
+const withSigninRetry = (attemptFactory, attempt = 1) => {
+  return attemptFactory(attempt).then((result) => {
+    const statusCode = result?.response?.statusCode ?? result?.status;
+
+    if (statusCode === 429 && attempt < MAX_SIGNIN_ATTEMPTS) {
+      const backoffMs = 2000 * attempt;
+      Cypress.log({
+        name: 'signin-retry',
+        message: `Received 429 from signin. Retrying in ${backoffMs}ms (attempt ${attempt + 1}/${MAX_SIGNIN_ATTEMPTS}).`
+      });
+
+      cy.wait(backoffMs);
+      return withSigninRetry(attemptFactory, attempt + 1);
+    }
+
+    return result;
+  });
+};
+
 Cypress.Commands.add('getBySel', (selector) => {
   return cy.get(`[data-cy="${selector}"], [data-testid="${selector}"]`);
 });
@@ -41,12 +62,25 @@ Cypress.Commands.add('login', (role = 'admin') => {
   const user = Cypress.env('users')[role];
 
   cy.intercept('POST', '/api/signin').as('signin');
-  cy.visitLogin();
-  cy.fillEmail(user.email);
-  cy.fillPassword(user.password);
-  cy.submitAuthForm();
+  const attemptLogin = () => withSigninRetry((attempt) => {
+    cy.visitLogin();
+    cy.fillEmail(user.email);
+    cy.fillPassword(user.password);
+    cy.submitAuthForm();
 
-  cy.wait('@signin').then(({ response }) => {
+    return cy.wait('@signin').then((interception) => {
+      const statusCode = interception?.response?.statusCode;
+
+      if (statusCode === 429 && attempt < MAX_SIGNIN_ATTEMPTS) {
+        return interception;
+      }
+
+      expect(statusCode).to.eq(200);
+      return interception;
+    });
+  });
+
+  attemptLogin().then(({ response }) => {
     expect(response?.statusCode).to.eq(200);
     const body = response.body;
     Cypress.env('lastSignin', body);
@@ -192,11 +226,20 @@ Cypress.Commands.add('switchProfile', (profileName) => {
   const admin = Cypress.env('users').admin;
   const udid = `cypress-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-  cy.request('POST', 'https://staging-auth.tiara.jewelry/api/signin', {
-    email: admin.email,
-    password: admin.password,
-    udid
-  }).then(({ body: signin }) => {
+  withSigninRetry((attempt) => {
+    return cy.request({
+      method: 'POST',
+      url: 'https://staging-auth.tiara.jewelry/api/signin',
+      failOnStatusCode: false,
+      body: {
+        email: admin.email,
+        password: admin.password,
+        udid: `${udid}-${attempt}`
+      }
+    });
+  }).then((signinResponse) => {
+    expect(signinResponse?.status).to.eq(200);
+    const signin = signinResponse.body;
     expect(signin?.accessToken, 'fresh signin access token').to.exist;
 
     const merchantName = Cypress.env('merchant');

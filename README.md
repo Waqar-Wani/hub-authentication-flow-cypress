@@ -1,187 +1,235 @@
-# 🚀 Hub Authentication Flow Automation
+# Tiara Auth Flow Automation
 
-End-to-end automation testing suite built with **Cypress** for the Hub Web Application authentication module.
+End-to-end automation suite built with Cypress for the Tiara Hub authentication flow.
 
-This project validates critical user authentication workflows including login, logout, forgot password functionality, role-based access control, and profile switching behavior.
-
----
-
-## 📋 Assignment Overview
-
-The objective of this project is to automate the authentication flow of the Hub Web Application and verify that users experience the correct behavior based on their role and selected profile.
-
-The suite covers:
-
-- ✅ Login & Logout
-- ✅ Forgot Password
-- ✅ Role-Based Access Control (RBAC)
-- ✅ Profile Switching
-- ✅ Session Persistence
-- ✅ Authorization & Restricted Access
+This project validates the core user journeys around authentication, authorization, role-aware access, and admin profile switching against the staging environment.
 
 ---
 
-## 🛠 Tech Stack
+## Overview
+
+The suite automates and verifies:
+
+- Login and Logout
+- Forgot Password
+- Role-Based Access Control
+- Profile Switching
+- Session Persistence
+- Restricted Access Validation
+
+Latest verified status:
+
+- `26/26` tests passing
+- `4/4` specs passing
+
+---
+
+## Target Environment
+
+| Area | URL |
+|---|---|
+| Auth app | `https://staging-auth.tiara.jewelry` |
+| Hub app | `https://staging-hub.tiara.jewelry` |
+
+---
+
+## Tech Stack
 
 | Tool | Purpose |
-|--------|---------|
-| Cypress | End-to-End Testing |
-| JavaScript | Test Implementation |
-| Mocha | Test Runner |
+|---|---|
+| Cypress `13.17.0` | End-to-end testing |
+| JavaScript | Test implementation |
+| Mocha | Test runner |
 | Chai | Assertions |
-| GitHub Actions *(optional)* | CI/CD Integration |
+| Node.js | Execution environment |
 
 ---
 
-## 📂 Project Structure
+## Highlights
+
+- Reusable Cypress commands for login, logout, and profile switching
+- Shared fixture-driven role and profile data
+- Role-aware assertions for access validation
+- HTML metrics reporting with JSON artifacts
+- Browser-printable report page that can be saved as PDF
+
+---
+
+## Project Structure
 
 ```text
-cypress/
-├── e2e/
-│   ├── login.cy.js
-│   ├── forgot-password.cy.js
-│   ├── role-based-login.cy.js
-│   └── profile-switching.cy.js
-│
-├── fixtures/
-│   └── testData.json
-│
-├── support/
-│   ├── commands.js
-│   └── e2e.js
-│
-├── screenshots/
-├── videos/
-
-cypress.config.js
-package.json
-README.md
+.
+├── cypress.config.js
+├── cypress/
+│   ├── e2e/
+│   │   ├── 01-login-logout.cy.js
+│   │   ├── 02-forgot-password.cy.js
+│   │   ├── 03-role-based-login.cy.js
+│   │   └── 04-profile-switching.cy.js
+│   ├── fixtures/
+│   │   └── testData.json
+│   └── support/
+│       ├── commands.js
+│       └── e2e.js
+├── scripts/
+│   ├── cypress.js
+│   └── cypress-report.js
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
 ---
 
-## 🎯 Test Coverage
+## Test Coverage
 
-### 🔐 Login & Logout
+### Login and Logout
 
 - Successful login
-- Invalid password validation
-- Invalid email format validation
-- Empty field validation
-- Logout functionality
-- Protected route access after logout
-- Session persistence on page refresh
+- Wrong password validation
+- Invalid email validation
+- Empty form validation
+- Logout flow
+- Protected route redirect after logout
+- Session persistence on refresh
 
-### 🔑 Forgot Password
+### Forgot Password
 
 - Forgot password navigation
 - Empty email validation
-- Registered email submission
+- Registered email confirmation
 - Password mismatch validation
 - Weak password validation
 
-### 👥 Role-Based Access
+### Role-Based Access
 
-- Admin login
-- Owner login
-- Store Manager login
+- Admin dashboard validation
+- Owner dashboard validation
+- Store manager dashboard validation
 - Role-specific navigation visibility
-- Restricted URL access validation
-- Switching between user roles
+- Restricted URL validation
+- Switching between roles
 
-### 🔄 Profile Switching
+### Profile Switching
 
-- Profile selector visibility
+- Profile switcher visibility
 - Active profile validation
-- Profile switching functionality
-- Dashboard update verification
-- Session persistence after profile change
-- Profile persistence after browser refresh
+- Switching from `QA` to `QA2`
+- Dashboard update after switch
+- Switching back to `QA`
+- Refresh persistence after profile change
 
 ---
 
-## 🚦 Getting Started
+## Installation
 
-### Clone Repository
-
-```bash
-git clone https://github.com/Waqar-Wani/hub-authentication-flow-cypress.git
-cd hub-authentication-flow-cypress
-```
-
-### Install Dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Open Cypress Test Runner
+If the Cypress binary is missing:
 
 ```bash
-npx cypress open
+npx cypress install
+npx cypress verify
 ```
 
-### Run Tests Headlessly
+If macOS blocks the local Cypress launcher:
 
 ```bash
-npx cypress run
+chmod +x node_modules/.bin/cypress
+chmod +x node_modules/cypress/bin/cypress
 ```
 
 ---
 
-## 📊 Test Design Approach
+## Running the Tests
 
-This framework follows:
+Open Cypress UI:
 
-- Page interaction through stable selectors
-- Reusable commands for common actions
-- Independent test execution
-- Clear assertions based on expected business behavior
-- Scalable structure for future test expansion
+```bash
+npm run cy:open
+```
 
----
+Run the full suite headlessly:
 
-## ✅ Latest Test Results
+```bash
+npm run cy:run
+```
 
-**All tests passing!** ✨
+Run a single spec:
 
-| Spec File | Tests | Passing | Duration |
-|-----------|-------|---------|----------|
-| 01-login-logout.cy.js | 7 | 7 | 34s |
-| 02-forgot-password.cy.js | 5 | 5 | 9s |
-| 03-role-based-login.cy.js | 7 | 7 | 36s |
-| 04-profile-switching.cy.js | 7 | 7 | 46s |
-| **TOTAL** | **26** | **26** | **2m 6s** |
-
-**Cypress**: 13.17.0 | **Browser**: Electron 118 (headless) | **Node**: v22.22.0
+```bash
+npm run cy:run -- --spec "cypress/e2e/01-login-logout.cy.js"
+```
 
 ---
 
-## ⚠️ Notes
+## Reporting
 
-The staging environment credentials used for testing are shared and were provided as part of the assignment.
+This repo includes a built-in report generator.
 
-No user data, passwords, or application configuration were modified during test execution.
+Generate an HTML metrics report:
+
+```bash
+npm run cy:report
+```
+
+Generate a report for one spec:
+
+```bash
+npm run cy:report -- --spec "cypress/e2e/02-forgot-password.cy.js"
+```
+
+Generated outputs:
+
+- `reports/latest/index.html`
+- `reports/latest/results.json`
+- `reports/latest/summary.json`
+
+Open `reports/latest/index.html` in a browser and save it as PDF from the print dialog if needed.
 
 ---
 
-## 📈 Future Enhancements
+## Latest Test Results
 
-- CI/CD integration with GitHub Actions
-- Cypress Dashboard reporting
-- Allure reporting
-- Cross-browser execution
-- API interception and validation
-- Data-driven testing
+Latest full-suite verification:
+
+| Spec File | Tests | Passing |
+|---|---:|---:|
+| `01-login-logout.cy.js` | 7 | 7 |
+| `02-forgot-password.cy.js` | 5 | 5 |
+| `03-role-based-login.cy.js` | 7 | 7 |
+| `04-profile-switching.cy.js` | 7 | 7 |
+| **TOTAL** | **26** | **26** |
+
+Environment from latest successful run:
+
+- **Cypress**: `13.17.0`
+- **Browser**: `Electron 118 (headless)`
 
 ---
 
-## 👨‍💻 Author
+## Notes
 
-**Waqar Wani**
-
-QA Automation Engineer
+- The suite is built around the current staging implementation and shared assignment credentials.
+- Forgot-password coverage is UI-level only and does not automate mailbox retrieval or actual password reset completion.
+- The tests avoid mutating shared staging data beyond the minimum state changes required by the assignment flow.
 
 ---
 
-⭐ If you found this project useful, feel free to star the repository.
+## Future Enhancements
+
+- CI integration with GitHub Actions
+- Cypress Dashboard integration
+- Richer historical reporting
+- API-level validation alongside UI assertions
+- Data-driven expansion for more role/profile combinations
+
+---
+
+## Author
+
+Waqar Wani

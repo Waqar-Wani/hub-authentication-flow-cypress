@@ -4,6 +4,7 @@
   "private": true,
   "description": "Cypress end-to-end tests for the Hub authentication flow assignment.",
   "scripts": {
+    "cy:report": "node scripts/cypress-report.js",
     "cy:open": "node scripts/cypress.js open",
     "cy:run": "node scripts/cypress.js run",
     "test": "npm run cy:run"

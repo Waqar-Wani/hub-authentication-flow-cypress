@@ -1,0 +1,644 @@
+{
+  "browserName": "electron",
+  "browserPath": "",
+  "browserVersion": "118.0.5993.159",
+  "config": {
+    "baseUrl": "https://staging-auth.tiara.jewelry",
+    "defaultCommandTimeout": 15000,
+    "pageLoadTimeout": 90000,
+    "viewportWidth": 1440,
+    "viewportHeight": 900,
+    "video": false,
+    "screenshotOnRunFailure": true,
+    "specPattern": "cypress/e2e/**/*.cy.js",
+    "supportFile": "/Users/waqar/GitHub/hub-authentication-flow-cypress/cypress/support/e2e.js",
+    "env": {
+      "merchant": "Sneha K",
+      "users": {
+        "admin": {
+          "email": "cypress.admin@irysgroup.com",
+          "password": "teamwork"
+        },
+        "owner": {
+          "email": "cypress.owner@irysgroup.com",
+          "password": "teamwork"
+        },
+        "storeManager": {
+          "email": "cypress.storemanager@irysgroup.com",
+          "password": "teamwork"
+        }
+      },
+      "profiles": {
+        "primary": "QA",
+        "secondary": "QA2"
+      },
+      "restrictedUrl": "https://staging-hub.tiara.jewelry/management/roles"
+    },
+    "projectRoot": "/Users/waqar/GitHub/hub-authentication-flow-cypress",
+    "projectName": "hub-authentication-flow-cypress",
+    "configFile": "cypress.config.js",
+    "isTextTerminal": true,
+    "animationDistanceThreshold": 5,
+    "arch": "arm64",
+    "blockHosts": null,
+    "chromeWebSecurity": true,
+    "clientCertificates": [],
+    "defaultBrowser": null,
+    "downloadsFolder": "/Users/waqar/GitHub/hub-authentication-flow-cypress/cypress/downloads",
+    "execTimeout": 60000,
+    "experimentalCspAllowList": false,
+    "experimentalFetchPolyfill": false,
+    "experimentalInteractiveRunEvents": false,
+    "experimentalRunAllSpecs": false,
+    "experimentalMemoryManagement": false,
+    "experimentalModifyObstructiveThirdPartyCode": false,
+    "experimentalSkipDomainInjection": null,
+    "experimentalJustInTimeCompile": false,
+    "experimentalOriginDependencies": false,
+    "experimentalSourceRewriting": false,
+    "experimentalSingleTabRunMode": false,
+    "experimentalStudio": false,
+    "experimentalWebKitSupport": false,
+    "fileServerFolder": "/Users/waqar/GitHub/hub-authentication-flow-cypress",
+    "fixturesFolder": "/Users/waqar/GitHub/hub-authentication-flow-cypress/cypress/fixtures",
+    "excludeSpecPattern": "*.hot-update.js",
+    "includeShadowDom": false,
+    "keystrokeDelay": 0,
+    "modifyObstructiveCode": true,
+    "numTestsKeptInMemory": 0,
+    "platform": "darwin",
+    "port": 64214,
+    "projectId": null,
+    "redirectionLimit": 20,
+    "reporter": "spec",
+    "reporterOptions": null,
+    "requestTimeout": 5000,
+    "resolvedNodePath": "/Users/waqar/.nvm/versions/node/v24.13.0/bin/node",
+    "resolvedNodeVersion": "24.13.0",
+    "responseTimeout": 30000,
+    "retries": {
+      "runMode": 0,
+      "openMode": 0
+    },
+    "screenshotsFolder": "/Users/waqar/GitHub/hub-authentication-flow-cypress/cypress/screenshots",
+    "slowTestThreshold": 10000,
+    "scrollBehavior": "top",
+    "taskTimeout": 60000,
+    "testIsolation": true,
+    "trashAssetsBeforeRuns": true,
+    "userAgent": null,
+    "videoCompression": false,
+    "videosFolder": "/Users/waqar/GitHub/hub-authentication-flow-cypress/cypress/videos",
+    "waitForAnimations": true,
+    "watchForFileChanges": false,
+    "browsers": [
+      {
+        "channel": "stable",
+        "displayName": "Chrome",
+        "family": "chromium",
+        "majorVersion": "148",
+        "name": "chrome",
+        "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "version": "148.0.7778.216"
+      },
+      {
+        "channel": "stable",
+        "displayName": "Electron",
+        "family": "chromium",
+        "majorVersion": 118,
+        "name": "electron",
+        "path": "",
+        "version": "118.0.5993.159"
+      }
+    ],
+    "cypressBinaryRoot": "/Users/waqar/Library/Caches/Cypress/13.17.0/Cypress.app/Contents/Resources/app",
+    "hosts": null,
+    "isInteractive": true,
+    "version": "13.17.0",
+    "testingType": "e2e",
+    "browser": null,
+    "cypressInternalEnv": "production"
+  },
+  "cypressVersion": "13.17.0",
+  "endedTestsAt": "2026-06-03T05:57:24.953Z",
+  "osName": "darwin",
+  "osVersion": "25.3.0",
+  "runs": [
+    {
+      "error": null,
+      "reporter": "spec",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 7,
+        "passes": 7,
+        "pending": 0,
+        "failures": 0,
+        "start": "2026-06-03T05:55:38.887Z",
+        "end": "2026-06-03T05:56:06.890Z",
+        "duration": 28003
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "/Users/waqar/GitHub/hub-authentication-flow-cypress/cypress/e2e/01-login-logout.cy.js",
+        "fileExtension": ".js",
+        "fileName": "01-login-logout",
+        "name": "01-login-logout.cy.js",
+        "relative": "cypress/e2e/01-login-logout.cy.js"
+      },
+      "stats": {
+        "duration": 28001,
+        "endedAt": "2026-06-03T05:56:06.884Z",
+        "failures": 0,
+        "passes": 7,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-06-03T05:55:38.883Z",
+        "suites": 1,
+        "tests": 7
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 8094,
+          "state": "passed",
+          "title": [
+            "Section 1 - Login & Logout",
+            "1. successful login with valid credentials redirects to the Hub dashboard"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 1478,
+          "state": "passed",
+          "title": [
+            "Section 1 - Login & Logout",
+            "2. login with wrong password shows an error and stays on login page"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 1642,
+          "state": "passed",
+          "title": [
+            "Section 1 - Login & Logout",
+            "3. login with invalid email format shows email validation"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 666,
+          "state": "passed",
+          "title": [
+            "Section 1 - Login & Logout",
+            "4. submitting the empty login form shows required field errors"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 7525,
+          "state": "passed",
+          "title": [
+            "Section 1 - Login & Logout",
+            "5. user logs out and is redirected back to login page"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 4534,
+          "state": "passed",
+          "title": [
+            "Section 1 - Login & Logout",
+            "6. accessing Hub directly after logout redirects to login page"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 3995,
+          "state": "passed",
+          "title": [
+            "Section 1 - Login & Logout",
+            "7. refreshing while logged in keeps the dashboard visible"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "spec",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 5,
+        "passes": 5,
+        "pending": 0,
+        "failures": 0,
+        "start": "2026-06-03T05:56:08.071Z",
+        "end": "2026-06-03T05:56:12.973Z",
+        "duration": 4902
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "/Users/waqar/GitHub/hub-authentication-flow-cypress/cypress/e2e/02-forgot-password.cy.js",
+        "fileExtension": ".js",
+        "fileName": "02-forgot-password",
+        "name": "02-forgot-password.cy.js",
+        "relative": "cypress/e2e/02-forgot-password.cy.js"
+      },
+      "stats": {
+        "duration": 4903,
+        "endedAt": "2026-06-03T05:56:12.971Z",
+        "failures": 0,
+        "passes": 5,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-06-03T05:56:08.068Z",
+        "suites": 1,
+        "tests": 5
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 1547,
+          "state": "passed",
+          "title": [
+            "Section 2 - Forgot Password",
+            "8. clicking Forgot password opens the forgot password form"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 614,
+          "state": "passed",
+          "title": [
+            "Section 2 - Forgot Password",
+            "9. submitting forgot password with empty email shows validation"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 1176,
+          "state": "passed",
+          "title": [
+            "Section 2 - Forgot Password",
+            "10. submitting forgot password with a registered email shows confirmation"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 589,
+          "state": "passed",
+          "title": [
+            "Section 2 - Forgot Password",
+            "11. mismatched new password and confirm password shows validation"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 945,
+          "state": "passed",
+          "title": [
+            "Section 2 - Forgot Password",
+            "12. weak or too-short new password shows validation"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "spec",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 7,
+        "passes": 7,
+        "pending": 0,
+        "failures": 0,
+        "start": "2026-06-03T05:56:13.968Z",
+        "end": "2026-06-03T05:56:44.353Z",
+        "duration": 30385
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "/Users/waqar/GitHub/hub-authentication-flow-cypress/cypress/e2e/03-role-based-login.cy.js",
+        "fileExtension": ".js",
+        "fileName": "03-role-based-login",
+        "name": "03-role-based-login.cy.js",
+        "relative": "cypress/e2e/03-role-based-login.cy.js"
+      },
+      "stats": {
+        "duration": 30381,
+        "endedAt": "2026-06-03T05:56:44.346Z",
+        "failures": 0,
+        "passes": 7,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-06-03T05:56:13.965Z",
+        "suites": 1,
+        "tests": 7
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 5836,
+          "state": "passed",
+          "title": [
+            "Section 3 - Role-Based Login",
+            "13. Admin dashboard loads with Admin-specific widgets visible"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 2951,
+          "state": "passed",
+          "title": [
+            "Section 3 - Role-Based Login",
+            "14. Owner dashboard loads and differs from Admin"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 3587,
+          "state": "passed",
+          "title": [
+            "Section 3 - Role-Based Login",
+            "15. Store Manager dashboard loads correctly"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 3079,
+          "state": "passed",
+          "title": [
+            "Section 3 - Role-Based Login",
+            "16. Admin sees User Management in navigation"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 3657,
+          "state": "passed",
+          "title": [
+            "Section 3 - Role-Based Login",
+            "17. Owner does not see User Management in navigation"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 3864,
+          "state": "passed",
+          "title": [
+            "Section 3 - Role-Based Login",
+            "18. Store Manager cannot access a restricted URL directly"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 7351,
+          "state": "passed",
+          "title": [
+            "Section 3 - Role-Based Login",
+            "19. logging out as one role then logging in as another shows the correct dashboard each time"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "spec",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 7,
+        "passes": 7,
+        "pending": 0,
+        "failures": 0,
+        "start": "2026-06-03T05:56:45.305Z",
+        "end": "2026-06-03T05:57:24.957Z",
+        "duration": 39652
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "/Users/waqar/GitHub/hub-authentication-flow-cypress/cypress/e2e/04-profile-switching.cy.js",
+        "fileExtension": ".js",
+        "fileName": "04-profile-switching",
+        "name": "04-profile-switching.cy.js",
+        "relative": "cypress/e2e/04-profile-switching.cy.js"
+      },
+      "stats": {
+        "duration": 39651,
+        "endedAt": "2026-06-03T05:57:24.953Z",
+        "failures": 0,
+        "passes": 7,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-06-03T05:56:45.302Z",
+        "suites": 1,
+        "tests": 7
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 5714,
+          "state": "passed",
+          "title": [
+            "Section 4 - Profile Switching",
+            "20. profile switcher is visible after login"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 2852,
+          "state": "passed",
+          "title": [
+            "Section 4 - Profile Switching",
+            "21. current profile name QA is displayed after login"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 7001,
+          "state": "passed",
+          "title": [
+            "Section 4 - Profile Switching",
+            "22. switches from QA to QA2 and reloads with QA2 selected"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 6480,
+          "state": "passed",
+          "title": [
+            "Section 4 - Profile Switching",
+            "23. profile name updates from QA to QA2 after switching"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 5060,
+          "state": "passed",
+          "title": [
+            "Section 4 - Profile Switching",
+            "24. dashboard content changes after profile switch"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 6493,
+          "state": "passed",
+          "title": [
+            "Section 4 - Profile Switching",
+            "25. switches back from QA2 to QA and restores QA dashboard data"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 5984,
+          "state": "passed",
+          "title": [
+            "Section 4 - Profile Switching",
+            "26. refreshing after profile switch keeps QA2 active"
+          ]
+        }
+      ],
+      "video": null
+    }
+  ],
+  "startedTestsAt": "2026-06-03T05:55:38.883Z",
+  "totalDuration": 102936,
+  "totalFailed": 0,
+  "totalPassed": 26,
+  "totalPending": 0,
+  "totalSkipped": 0,
+  "totalSuites": 4,
+  "totalTests": 26
+}
